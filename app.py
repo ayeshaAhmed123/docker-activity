@@ -9,7 +9,7 @@ app = Flask(__name__)
 # Load the pre-trained Keras model
 model = load_model('modelCATR.h5')
 
-# Define a function to preprocess the image
+# Define a function to preprogitcess the image
 def preprocess_image(img_path):
     img = image.load_img(img_path, target_size=(224, 224))
     img_array = image.img_to_array(img)
