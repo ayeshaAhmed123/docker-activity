@@ -1,0 +1,21 @@
+# Use an official Python runtime as the base image
+FROM python:3.11.5-slim
+
+# Set environment variables
+ENV APP_HOME /dockermlops
+ENV PORT 5000
+
+# Create the application directory
+WORKDIR $APP_HOME
+
+# Copy the Flask application file into the created directory
+COPY flask.py $APP_HOME
+
+# Install dependencies
+RUN pip install --no-cache-dir flask
+
+# Expose the Flask port
+EXPOSE $PORT
+
+# Command to run the Flask application
+CMD ["python", "flask.py"]
